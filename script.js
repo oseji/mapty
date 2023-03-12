@@ -30,12 +30,8 @@ navigator.geolocation.getCurrentPosition(
 
     //map onclick function
     map.on("click", function (mapEvent) {
-      //when the map is clicked,an event is created,within this event you can find the object containing the Lat&Lng of the clicked position
-      //console.log(mapEvent);
-      const { lat, lng } = mapEvent.latlng; //destructuring the object the extract the Lat&Lng
-      //console.log(lat, lng);
+      const { lat, lng } = mapEvent.latlng;
 
-      //creating map marker
       L.marker([lat, lng], { opacity: 0.75 })
         .addTo(map)
         .bindPopup(`Workout.`)
